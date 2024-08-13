@@ -3,7 +3,6 @@ import { useCart } from '../context/CartContext';
 
 const CartTotal = () => {
     const { state } = useCart();
-
     const totalAmount = state.cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
     return (
@@ -12,5 +11,4 @@ const CartTotal = () => {
         </div>
     );
 };
-
 export default CartTotal;

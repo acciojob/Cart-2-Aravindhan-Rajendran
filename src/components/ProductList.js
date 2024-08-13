@@ -13,6 +13,10 @@ const ProductList = () => {
         dispatch({ type: 'DECREMENT', payload: id });
     };
 
+    const handleRemove = (id) => {
+        dispatch({ type: 'REMOVE_ITEM', payload: id });
+    };
+
     return (
         <div id="cart-items-list">
             {state.cart.length === 0 ? (
@@ -24,11 +28,11 @@ const ProductList = () => {
                         item={item}
                         onIncrement={() => handleIncrement(item.id)}
                         onDecrement={() => handleDecrement(item.id)}
+                        onRemove={handleRemove}
                     />
                 ))
             )}
         </div>
     );
 };
-
 export default ProductList;

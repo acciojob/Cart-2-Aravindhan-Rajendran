@@ -1,17 +1,31 @@
 const cartReducer = (state, action) => {
     switch (action.type) {
         case 'ADD_ITEM':
-            // Add logic to add item to cart
-            return { ...state };
+            // Logic to add item to cart
+            return { ...state, cart: [...state.cart, action.payload] };
         case 'REMOVE_ITEM':
-            // Add logic to remove item from cart
-            return { ...state };
+            // Logic to remove item from cart
+            return { ...state, cart: state.cart.filter(item => item.id !== action.payload) };
         case 'INCREMENT':
-            // Add logic to increment item quantity
-            return { ...state };
+            // Logic to increment item quantity
+            return {
+                ...state,
+                cart: state.cart.map(item =>
+                    item.id === action.payload
+                        ? { ...item, quantity: item.quantity + 1 }
+                        : item
+                ),
+            };
         case 'DECREMENT':
-            // Add logic to decrement item quantity
-            return { ...state };
+            // Logic to decrement item quantity
+            return {
+                ...state,
+                cart: state.cart.map(item =>
+                    item.id === action.payload
+                        ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
+                        : item
+                ),
+            };
         case 'CLEAR_CART':
             return { cart: [] };
         default:
