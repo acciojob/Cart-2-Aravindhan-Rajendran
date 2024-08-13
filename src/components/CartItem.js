@@ -9,4 +9,5 @@ const CartItem = ({ item, onIncrement, onDecrement, onRemove }) => (
         <button id={`cart-item-remove-${item.id}`} onClick={() => onRemove(item.id)}>Remove</button>
     </div>
 );
+
 export default CartItem;

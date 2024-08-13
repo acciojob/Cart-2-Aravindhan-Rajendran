@@ -6,14 +6,17 @@ const ProductList = () => {
     const { state, dispatch } = useCart();
 
     const handleIncrement = (id) => {
+        console.log(`Incrementing item ${id}`); // Debugging
         dispatch({ type: 'INCREMENT', payload: id });
     };
 
     const handleDecrement = (id) => {
+        console.log(`Decrementing item ${id}`); // Debugging
         dispatch({ type: 'DECREMENT', payload: id });
     };
 
     const handleRemove = (id) => {
+        console.log(`Removing item ${id}`); // Debugging
         dispatch({ type: 'REMOVE_ITEM', payload: id });
     };
 
