@@ -11,4 +11,5 @@ const CartTotal = () => {
         </div>
     );
 };
+
 export default CartTotal;
