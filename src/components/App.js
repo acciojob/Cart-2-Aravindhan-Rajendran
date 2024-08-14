@@ -33,9 +33,7 @@ const App = () => {
                 Clear Cart
             </button>
             <ul id="cart-items-list">
-                {state.items.length === 0 ? (
-                    <p>Cart is currently empty</p>
-                ) : (
+                {state.items.length === 0 ? "" : (
                     state.items.map((item) => (
                         <li key={item.id}>
                             <span id={`cart-item-name-${item.id}`}>{item.name}</span>
