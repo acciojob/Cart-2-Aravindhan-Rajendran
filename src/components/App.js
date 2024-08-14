@@ -38,7 +38,7 @@ const App = () => {
                         <li key={item.id}>
                             <span id={`cart-item-name-${item.id}`}>{item.name}</span>
                             <span id={`cart-item-price-${item.id}`}>${item.price}</span>
-                            <span id={`cart-amount-${item.id}`}>Quantity: {item.quantity}</span>
+                            <span id={`cart-amount-${item.id}`}>{item.quantity}</span>
                             <button
                                 id={`increment-btn-${item.id}`}
                                 onClick={() => handleIncrement(item.id)}
