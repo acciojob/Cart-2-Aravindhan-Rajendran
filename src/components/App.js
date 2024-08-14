@@ -62,7 +62,7 @@ const App = () => {
                 )}
             </ul>
             <div id="cart-total-amount">
-                ${state.totalAmount}
+                $ {state.totalAmount}
             </div>
         </div>
     );
