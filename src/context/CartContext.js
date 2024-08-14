@@ -15,11 +15,10 @@ const cartReducer = (state, action) => {
             return {
                 ...state,
                 items: [...state.items, action.payload],
-                totalItems: state.totalItems + 1,
+                totalItems: state.totalItems + action.payload.quantity, // Increase by item quantity
                 totalAmount: state.totalAmount + action.payload.price * action.payload.quantity,
             };
         case 'INCREMENT':
-            // Handle incrementing quantity
             return {
                 ...state,
                 items: state.items.map(item =>
@@ -27,10 +26,10 @@ const cartReducer = (state, action) => {
                         ? { ...item, quantity: item.quantity + 1 }
                         : item
                 ),
+                totalItems: state.totalItems + 1, // Increment total items count
                 totalAmount: state.totalAmount + state.items.find(item => item.id === action.payload).price,
             };
         case 'DECREMENT':
-            // Handle decrementing quantity
             return {
                 ...state,
                 items: state.items.map(item =>
@@ -38,19 +37,18 @@ const cartReducer = (state, action) => {
                         ? { ...item, quantity: item.quantity - 1 }
                         : item
                 ),
+                totalItems: state.totalItems > 0 ? state.totalItems - 1 : 0, // Decrement total items count
                 totalAmount: state.totalAmount - state.items.find(item => item.id === action.payload).price,
             };
         case 'REMOVE_ITEM':
-            // Handle removing an item
             const itemToRemove = state.items.find(item => item.id === action.payload);
             return {
                 ...state,
                 items: state.items.filter(item => item.id !== action.payload),
-                totalItems: state.totalItems - 1,
+                totalItems: state.totalItems - itemToRemove.quantity, // Decrease by item quantity
                 totalAmount: state.totalAmount - (itemToRemove.price * itemToRemove.quantity),
             };
         case 'CLEAR_CART':
-            // Handle clearing the cart
             return {
                 ...state,
                 items: [],
