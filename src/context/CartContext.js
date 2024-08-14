@@ -40,7 +40,7 @@ const cartReducer = (state, action) => {
                             : item
                     ),
                     totalItems: state.totalItems > 0 ? state.totalItems - 1 : 0, // Decrement total items count
-                    totalAmount: state.totalAmount - itemToDecrement.price,
+                    totalAmount: state.totalAmount - itemToDecrement.price * (itemToDecrement.quantity - decrementedQuantity),
                 };
         case 'REMOVE_ITEM':
             const itemToRemove = state.items.find(item => item.id === action.payload);
