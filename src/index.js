@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App"; // Adjust the import path if necessary
-import { CartProvider } from "./context/CartContext"; // Import the CartProvider to wrap the App component
+import App from "./components/App";
+import { CartProvider } from "./context/CartContext"; // Ensure the correct path here
 
 ReactDOM.render(
     <React.StrictMode>
