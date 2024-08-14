@@ -1,5 +1,6 @@
 import React, { useReducer, useContext } from 'react';
 import { CartProvider, CartContext } from '../context/CartContext'; // Ensure the path is correct
+import './App.css';
 
 const App = () => {
     const { state, dispatch } = useContext(CartContext);

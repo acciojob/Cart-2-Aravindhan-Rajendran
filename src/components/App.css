@@ -1,0 +1,64 @@
+/* App.css */
+
+#main {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+#nav-cart-item-count {
+    background-color: #ff6347;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#cart-items-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-items-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+#cart-total-amount {
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#clear-all-cart {
+    background-color: #dc3545;
+}
+
+#clear-all-cart:hover {
+    background-color: #c82333;
+}
