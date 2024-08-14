@@ -69,7 +69,7 @@ const CartProvider = ({ children }) => {
     useEffect(() => {
         const exampleProducts = [
             { id: 1, name: 'Product 1', price: 500.00, quantity: 1 },
-            { id: 2, name: 'Product 2', price: 500.00, quantity: 1 },
+            { id: 2, name: 'Product 2', price: 1000.00, quantity: 1 },
             { id: 3, name: 'Product 3', price: 200.00, quantity: 1 },
             { id: 4, name: 'Product 4', price: 299.97, quantity: 1 },
         ];
