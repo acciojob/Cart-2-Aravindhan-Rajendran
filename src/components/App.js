@@ -25,7 +25,7 @@ const App = () => {
             <nav>
                 <h1>Shopping Cart</h1>
                 <div id="nav-cart-item-count">
-                    Cart Items: {state.totalItems}
+                    {state.totalItems}
                 </div>
                 <p>useReducer</p>
             </nav>
