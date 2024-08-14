@@ -29,19 +29,17 @@ const cartReducer = (state, action) => {
                 totalItems: state.totalItems + 1, // Increment total items count
                 totalAmount: state.totalAmount + state.items.find(item => item.id === action.payload).price,
             };
-            case 'DECREMENT':
-                const itemToDecrement = state.items.find(item => item.id === action.payload);
-                const decrementedQuantity = itemToDecrement.quantity > 1 ? itemToDecrement.quantity - 1 : 0;
-                return {
-                    ...state,
-                    items: state.items.map(item =>
-                        item.id === action.payload
-                            ? { ...item, quantity: decrementedQuantity }
-                            : item
-                    ),
-                    totalItems: state.totalItems > 0 ? state.totalItems - 1 : 0, // Decrement total items count
-                    totalAmount: state.totalAmount - itemToDecrement.price * (itemToDecrement.quantity - decrementedQuantity),
-                };
+        case 'DECREMENT':
+            return {
+                ...state,
+                items: state.items.map(item =>
+                    item.id === action.payload && item.quantity > 1
+                        ? { ...item, quantity: item.quantity - 1 }
+                        : item
+                ),
+                totalItems: state.totalItems > 0 ? state.totalItems - 1 : 0, // Decrement total items count
+                totalAmount: state.totalAmount - state.items.find(item => item.id === action.payload).price,
+            };
         case 'REMOVE_ITEM':
             const itemToRemove = state.items.find(item => item.id === action.payload);
             return {
