@@ -33,9 +33,11 @@ const App = () => {
             <button id="clear-all-cart" onClick={handleClearCart}>
                 Clear Cart
             </button>
-           {handleClearCart? "" : <ul id="cart-items-list">
-                {state.items.length === 0 ? "Cart is currently empty" : (
-                    state.items.map((item) => (
+            {state.items.length === 0 ? (
+                <p>Cart is currently empty</p>
+            ) : (
+                <ul id="cart-items-list">
+                    {state.items.map((item) => (
                         <li key={item.id}>
                             <span id={`cart-item-name-${item.id}`}>{item.name}</span>
                             <span id={`cart-item-price-${item.id}`}>${item.price}</span>
@@ -59,10 +61,9 @@ const App = () => {
                                 Remove
                             </button>
                         </li>
-                    ))
-                )}
-            </ul>
-}
+                    ))}
+                </ul>
+            )}
             <div id="cart-total-amount">
                 $ {state.totalAmount}
             </div>
