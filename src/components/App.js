@@ -7,9 +7,9 @@ export const Datacontext = createContext();
 const App = () => {
   const [state, dispatch] = useReducer(Reducer, initialState);
 
-  const handleRemoveItem = (item) => {
-    dispatch({ type: 'REMOVE_ITEM', payload: { id: item.id } });
-  };
+  const handleremoveitem = (item) => {
+    dispatch({ type: 'REMOVE_ITEM', payload: item });
+  }
 
   const increment = (item) => {
     dispatch({ type: 'INCREMENT', payload: item });
