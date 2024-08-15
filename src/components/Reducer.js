@@ -9,7 +9,7 @@ export const initialState = [
   {
     id: 2,
     title: "Google Pixel",
-    price: 499.99,
+    price: 499.98,
     img: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1583371867/phone-1_gvesln.png",
     amount: 1
   },
