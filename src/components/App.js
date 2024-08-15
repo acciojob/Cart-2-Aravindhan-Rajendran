@@ -1,5 +1,5 @@
 import React, { createContext, memo, useEffect, useRef, useState } from 'react'
-import '../styles/App.css'
+import './App.css'
 import { useReducer } from 'react'
 import { Reducer,initialState } from './Reducer'
 export const Datacontext=createContext();
