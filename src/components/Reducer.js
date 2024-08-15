@@ -38,6 +38,8 @@ export const Reducer = (state, action) => {
       );
     case 'REMOVE_ITEM':
       return state.filter(item => item.id !== action.payload.id);
+    case 'CLEAR_ALL':
+      return [];
     default:
       return state;
   }

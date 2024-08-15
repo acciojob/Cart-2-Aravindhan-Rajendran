@@ -50,7 +50,7 @@ const App = () => {
               </div>
             ))}
             <p id='cart-total-amount'>$ {total().toFixed(2)}</p>
-            <button onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: { id: -1 } })} id='clear-all-cart'>Clear All</button>
+            <button onClick={() => dispatch({ type: 'CLEAR_ALL' })} id='clear-all-cart'>Clear All</button>
           </div>
         ) : (
           <p>Cart is currently empty</p>
