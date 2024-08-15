@@ -8,7 +8,7 @@ const App = () => {
   const [state, dispatch] = useReducer(Reducer, initialState);
 
   const handleRemoveItem = (item) => {
-    dispatch({ type: 'REMOVE_ITEM', payload: item });
+    dispatch({ type: 'REMOVE_ITEM', payload: { id: item.id } });
   };
 
   const increment = (item) => {
