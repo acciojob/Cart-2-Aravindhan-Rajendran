@@ -7,7 +7,7 @@ export const Datacontext = createContext();
 const App = () => {
   const [state, dispatch] = useReducer(Reducer, initialState);
 
-  const handleremoveitem = (item) => {
+  const handleRemoveItem = (item) => {
     dispatch({ type: 'REMOVE_ITEM', payload: item });
   }
 
