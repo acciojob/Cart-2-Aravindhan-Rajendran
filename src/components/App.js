@@ -21,11 +21,11 @@ const App = () => {
   };
 
   const total = () => {
-    return state.reduce((acc, item) => acc + item.amount * item.price, 0);
+    return state.reduce((acc, item) => acc + (item.isRemoved ? 0 : item.amount * item.price), 0);
   };
 
   const navCount = () => {
-    return state.reduce((acc, item) => acc + item.amount, 0);
+    return state.reduce((acc, item) => acc + (item.isRemoved ? 0 : item.amount), 0);
   };
 
   return (
@@ -38,7 +38,7 @@ const App = () => {
         </nav>
         {state.length > 0 ? (
           <div id='cart-items-list'>
-            {state.map((item) => (
+            {state.map((item) => !item.isRemoved && (
               <div className='cart-item' key={item.id}>
                 <img src={item.img} alt={item.title} />
                 <h4>{item.title}</h4>
@@ -62,3 +62,4 @@ const App = () => {
 }
 
 export default memo(App);
+
