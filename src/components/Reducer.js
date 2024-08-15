@@ -36,11 +36,11 @@ export const Reducer = (state, action) => {
           ? { ...item, amount: item.amount - 1 }
           : item
       );
-      case 'REMOVE_ITEM':
-        console.log("State before remove:", state);
-        const newState = state.filter(item => item.id !== action.payload.id);
-        console.log("State after remove:", newState);
-        return newState;
+    case 'REMOVE_ITEM':
+      console.log("State before remove:", state);
+      const newState = state.filter(item => item.id !== action.payload.id);
+      console.log("State after remove:", newState);
+      return newState;
     case 'CLEAR_ALL':
       return [];
     default:
